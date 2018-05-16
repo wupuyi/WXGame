@@ -1,18 +1,18 @@
 // 精灵的基类，负责初始化精灵加载的资源和大小以及位置
 export class Sprite {
 
-  constructor (ctx = null,
-               img = null,
-               srcX = 0,
-               srcY = 0,
-               srcW = 0,
-               srcH = 0,
-               x = 0, y = 0,
-               width = 0,
-               height = 0
-              ) {
+  constructor(ctx = null,
+    img = null,
+    srcX = 0,
+    srcY = 0,
+    srcW = 0,
+    srcH = 0,
+    x = 0, y = 0,
+    width = 0,
+    height = 0
+  ) {
     this.ctx = ctx
-    this.img = img 
+    this.img = img
     this.srcX = srcX
     this.srcY = srcY
     this.srcW = srcW
@@ -34,11 +34,12 @@ export class Sprite {
    * width 要使用的宽度
    * height 要使用的高度
    */
-  draw () {
+  draw() {
     this.ctx.drawImage(
       this.img,
       this.srcX,
       this.srcY,
+      this.srcW,
       this.srcH,
       this.x,
       this.y,
