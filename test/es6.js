@@ -12,6 +12,7 @@ class Animal {
 }
 
 class Cat extends Animal {
+
   constructor (name, age) {
     super(name, age);
   }
