@@ -21,9 +21,7 @@ export class Main {
 
   init () {
     this.dataStore
-        .put('background',
-          new BackGround(this.ctx,
-            this.dataStore.res.get('background')));
+        .put('background', BackGround);
     // let background = new BackGround(this.ctx, map.get('background'));
     // background.draw();
     Director.getInstance().run();

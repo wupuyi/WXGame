@@ -12,6 +12,9 @@ export class DataStore {
   }
 
   put (key, value) {
+    if (typeof value === 'function') {
+      value = new value();
+    }
     this.map.set(key, value);
     // 连续put时可以链式操作
     return this;
