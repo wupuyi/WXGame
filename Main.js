@@ -2,6 +2,7 @@ import { ResourceLoader } from "./js/base/ResourceLoader.js";
 import { Director } from "./js/Director.js";
 import { BackGround } from "./js/runtime/BackGround.js";
 import { DataStore } from "./js/base/DataStore.js";
+import { Land } from "./js/runtime/Land.js";
 
 // 初始化整个游戏的精灵，作为游戏开始的入口
 export class Main {
@@ -21,7 +22,8 @@ export class Main {
 
   init () {
     this.dataStore
-        .put('background', BackGround);
+        .put('background', BackGround)
+        .put('land', Land);
     // let background = new BackGround(this.ctx, map.get('background'));
     // background.draw();
     Director.getInstance().run();
