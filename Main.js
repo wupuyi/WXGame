@@ -4,6 +4,8 @@ import { BackGround } from "./js/runtime/BackGround.js";
 import { DataStore } from "./js/base/DataStore.js";
 import { Land } from "./js/runtime/Land.js";
 import { Birds } from "./js/player/Birds.js";
+import { StartButton } from "./js/player/StartButton.js";
+import { Score } from "./js/player/Score.js";
 
 // 初始化整个游戏的精灵，作为游戏开始的入口
 export class Main {
@@ -30,7 +32,9 @@ export class Main {
         .put('pencils', [])
         .put('background', BackGround)
         .put('land', Land)
-        .put('birds', Birds);
+        .put('birds', Birds)
+        .put('score', Score)
+        .put('startButton', StartButton);
     // let background = new BackGround(this.ctx, map.get('background'));
     // background.draw();
     this.registerEvent();
