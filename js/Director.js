@@ -36,7 +36,13 @@ export class Director {
   // 判断小鸟是否撞击地板和铅笔
   check () {
     const birds = this.dataStore.get('birds');
-    const land = this.dataStore.get('land')
+    const land = this.dataStore.get('land');
+    // 地板的撞击判断
+    if (birds.birdsY[0] + birds.birdsHeight[0] >= land.y) {
+      console.log('撞击地板了');
+      this.isGameOver = true;
+      return ;
+    }
   }
 
   // 运行
