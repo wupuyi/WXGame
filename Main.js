@@ -33,8 +33,23 @@ export class Main {
         .put('birds', Birds);
     // let background = new BackGround(this.ctx, map.get('background'));
     // background.draw();
+    this.registerEvent();
     // 创建铅笔要在游戏逻辑运行之前
     this.director.createPencil();
     this.director.run();
   }
+
+  registerEvent () {
+    this.canvas.addEventListener('touchstart', e => {
+      // 屏蔽掉js的时间冒泡
+      e.preventDefault();
+      if (this.director.isGameOver) {
+        console.log('游戏开始')
+        this.init();
+      } else {
+        this.director.birdsEvent();
+      }
+    });
+  }
+
 }

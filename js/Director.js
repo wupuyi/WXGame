@@ -25,8 +25,23 @@ export class Director {
     this.dataStore.get('pencils').push(new DownPencil(top))
   }
 
+  birdsEvent () {
+    // if (this.dataStore.get('birds'))
+    for (let i = 0; i <= 2; i++) {
+      this.dataStore.get('birds').y[i] = this.dataStore.get('birds').birdsY[i];
+    }
+    this.dataStore.get('birds').time = 0;
+  }
+
+  // 判断小鸟是否撞击地板和铅笔
+  check () {
+    const birds = this.dataStore.get('birds');
+    const land = this.dataStore.get('land')
+  }
+
   // 运行
   run () {
+    this.check();
     if (!this.isGameOver) {
       this.dataStore.get('background').draw();
 
