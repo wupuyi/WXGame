@@ -69,4 +69,14 @@ export class ApiExamples {
     });
 
   }
+
+  download () {
+    wx.downloadFile({
+      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526978636600&di=b16af6006a68e5d3fd2cee1e17714cc8&imgtype=0&src=http%3A%2F%2Fwww.hinews.cn%2Fpic%2F0%2F13%2F29%2F70%2F13297015_505700.jpg',
+      success: function (temp) {
+        console.log(JSON.stringify(temp))
+      }
+
+    })
+  }
 }
