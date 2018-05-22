@@ -6,6 +6,7 @@ import { Land } from "./js/runtime/Land.js";
 import { Birds } from "./js/player/Birds.js";
 import { StartButton } from "./js/player/StartButton.js";
 import { Score } from "./js/player/Score.js";
+import { ApiExamples } from "./js/ApiExamples.js";
 
 // 初始化整个游戏的精灵，作为游戏开始的入口
 export class Main {
@@ -30,7 +31,12 @@ export class Main {
     this.dataStore.canvas = this.canvas;
     this.dataStore.ctx = this.ctx;
     this.dataStore.res = map;
-    this.createBackgroundMusic();
+    // 调用背景音乐
+    // this.createBackgroundMusic();
+    const examples = new ApiExamples();
+    // examples.getUerInfo();
+    // examples.login();
+    // examples.getSettings();
     this.init(); 
   }
 
