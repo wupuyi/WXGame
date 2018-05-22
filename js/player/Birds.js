@@ -2,6 +2,7 @@
 // 循环的渲染三只小鸟
 // 其实是循环渲染图片的三个部分
 import { Sprite } from "../base/Sprite.js";
+import { DataStore } from "../base/DataStore.js";
 
 export class Birds extends Sprite {
   constructor () {
@@ -19,9 +20,9 @@ export class Birds extends Sprite {
     this.clippingY = [10, 10, 10];
     this.clippingWidth = [34, 34, 34];
     this.clippingHeight = [24, 24, 24];
-    const birdX = window.innerWidth / 4;
+    const birdX = DataStore.getInstance().canvas.width / 4;
     this.birdsX = [birdX, birdX, birdX];
-    const birdY = window.innerHeight / 2; 
+    const birdY = DataStore.getInstance().canvas.height / 2; 
     this.birdsY = [birdY, birdY, birdY];
     const birdWidth = 34;
     this.birdsWidth = [birdWidth, birdWidth, birdWidth];
